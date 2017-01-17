@@ -125,6 +125,15 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
                 providerData: providerData
               }, null, '  ');
             });
+
+
+            $('#signout').on('click', function(event) {
+                firebase.auth().signOut().then(function() {
+                  window.location.href = 'login.html';
+                }, function(error) {
+                  // An error happened.
+                });              
+            })
           } else {
             // User is signed out.
             // document.getElementById('sign-in-status').textContent = 'Signed out';
