@@ -41,11 +41,6 @@ $("#add-employee-btn").on("click", function(event) {
   // Uploads employee data to the database
   database.ref().push(newEmp);
 
-  // Logs everything to console
-  console.log(newEmp.name);
-  console.log(newEmp.role);
-  console.log(newEmp.start);
-  console.log(newEmp.rate);
 
   // Alert
   alert("Employee successfully added");
@@ -63,7 +58,7 @@ $("#add-employee-btn").on("click", function(event) {
 // 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
 database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
-  console.log(childSnapshot.val());
+
 
   // Store everything into a variable.
   var empName = childSnapshot.val().name;
@@ -71,23 +66,16 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   var empStart = childSnapshot.val().start;
   var empRate = childSnapshot.val().rate;
 
-  // Employee Info
-  console.log(empName);
-  console.log(empRole);
-  console.log(empStart);
-  console.log(empRate);
-
   // Prettify the employee start
   var empStartPretty = moment.unix(empStart).format("MM/DD/YY");
 
   // Calculate the months worked using hardcore math
   // To calculate the months worked
   var empMonths = moment().diff(moment.unix(empStart, "X"), "months");
-  console.log(empMonths);
 
   // Calculate the total billed rate
   var empBilled = empMonths * empRate;
-  console.log(empBilled);
+
 
   // Add each train's data into the table
   $("#employee-table > tbody").append("<tr><td>" + empName + "</td><td>" + empRole + "</td><td>" +
@@ -115,6 +103,7 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
      initApp = function() {
         firebase.auth().onAuthStateChanged(function(user) {
+          console.log('user', user);
           if (user) {
             // User is signed in.
             var displayName = user.displayName;
@@ -148,9 +137,10 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
       };
 
       window.addEventListener('load', function() {
-        initApp()
+        initApp();
+        console.log('in init app');
       });
-      
+
 // Example Time Math
 // -----------------------------------------------------------------------------
 // Assume Employee start date of January 1, 2015
