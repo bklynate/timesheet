@@ -133,7 +133,7 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
                 }, function(error) {
                   // An error happened.
                 });              
-            })
+            })   
           } else {
             // User is signed out.
             // document.getElementById('sign-in-status').textContent = 'Signed out';
