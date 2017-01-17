@@ -34,7 +34,7 @@ ui.start('#firebaseui-auth-container', uiConfig);
         firebase.auth().onAuthStateChanged(function(user) {
           console.log('user', user);
           if (user) {
-            window.location.url = '/index.html';
+            window.location.href = 'index.html';
           } else {
 
             // // User is signed out.

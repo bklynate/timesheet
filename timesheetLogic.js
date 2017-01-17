@@ -130,7 +130,7 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
             // document.getElementById('sign-in-status').textContent = 'Signed out';
             // document.getElementById('sign-in').textContent = 'Sign in';
             // document.getElementById('account-details').textContent = 'null';
-            window.location.url = '/login.html';
+            window.location.href = 'login.html';
           }
         }, function(error) {
           console.log(error);
