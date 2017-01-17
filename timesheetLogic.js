@@ -97,13 +97,13 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
       // FirebaseUI config.
       var uiConfig = {
-        signInSuccessUrl: '<url-to-redirect-to-on-success>',
+        signInSuccessUrl: 'https://iamakimmer.github.io/timesheet/index.html',
         signInOptions: [
           // Leave the lines as is for the providers you want to offer your users.
           firebase.auth.TwitterAuthProvider.PROVIDER_ID,
         ],
         // Terms of service url.
-        tosUrl: '<your-tos-url>'
+        tosUrl: 'https://iamakimmer.github.io/timesheet/tos.html'
       };
 
       // Initialize the FirebaseUI Widget using Firebase.
