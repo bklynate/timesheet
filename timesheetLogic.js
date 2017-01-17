@@ -105,7 +105,6 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
         firebase.auth().onAuthStateChanged(function(user) {
           console.log('user', user);
           if (user) {
-            $('#firebaseui-auth-container').remove();
             // User is signed in.
             var displayName = user.displayName;
             var email = user.email;
