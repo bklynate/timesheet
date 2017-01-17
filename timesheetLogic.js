@@ -127,9 +127,10 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
             });
           } else {
             // User is signed out.
-            document.getElementById('sign-in-status').textContent = 'Signed out';
-            document.getElementById('sign-in').textContent = 'Sign in';
-            document.getElementById('account-details').textContent = 'null';
+            // document.getElementById('sign-in-status').textContent = 'Signed out';
+            // document.getElementById('sign-in').textContent = 'Sign in';
+            // document.getElementById('account-details').textContent = 'null';
+            window.location.url = '/login.html';
           }
         }, function(error) {
           console.log(error);
