@@ -28,7 +28,7 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
 // The start method will wait until the DOM is loaded.
 ui.start('#firebaseui-auth-container', uiConfig);
 
-
+console.log('in here');
 
      initApp = function() {
         firebase.auth().onAuthStateChanged(function(user) {
